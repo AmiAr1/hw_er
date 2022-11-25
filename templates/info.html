@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block page %}
+    {% for product in info %}
+        <div>Характеристика Товара:</div>
+        <div>
+            name: {{ product.name }} - |<br>
+            adding time: {{ product.created_at }}<br>
+            price: {{ product.price }}<br>
+            {% if product.photo %}
+                <img src="{{ product.photo.url }}"/>
+            {% else %}
+                <span>Нет фото</span>
+            {% endif %}
+        <br>
+
+            <a href="{% url 'product-update' product.id %}">добавить </a>  |
+            <a href="{% url 'product-delete' product.id %}">удалить</a>
+            <br>
+
+    {% endfor %}
+{% endblock %}

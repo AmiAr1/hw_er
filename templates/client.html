@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block page %}
+        <form method="POST">
+        {% csrf_token %}
+        <br><div><input name="name" type="text" placeholder="Название товара"></div><br>
+        <div><input name="price" type="text"  placeholder="Цена товара"></div><br>
+        <div><input name="photo" type="file" placeholder="Фото товара"></div><br>
+        <button>Оформить товар</button><br>
+        <br><div>время: <input type="datetime-local"></div>
+    </form>
+
+{% endblock %}
